@@ -72,5 +72,4 @@ def premanantly_expire_product(request, id):
         return redirect("all_products")
     
 
-
-print("rohit gaiwkad")    
+print("rohit gaikwad")
