@@ -73,12 +73,4 @@ def premanantly_expire_product(request, id):
     
 
 
-def func(r):
-    r = "Rohit"
-    return r
-
-func()
-
-
-
-print("Rohit gaikwad")
+print("rohit gaiwkad")    
