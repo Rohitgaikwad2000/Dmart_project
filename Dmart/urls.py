@@ -35,3 +35,6 @@ urlpatterns = [
 
 
 print("rohit gaikwad")
+
+
+print("Software devloper")
