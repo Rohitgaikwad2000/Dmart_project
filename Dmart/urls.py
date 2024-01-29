@@ -33,9 +33,5 @@ urlpatterns = [
     path('csv/', include('csv_upload.urls')),
 ]
 
-def func(r):
-    r = "Rohit"
-    return r
 
-func()
-
+print("Vinay jojare")
