@@ -72,3 +72,9 @@ def premanantly_expire_product(request, id):
         return redirect("all_products")
     
 
+
+def func(r):
+    r = "Rohit"
+    return r
+
+func()
