@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <h1> ADD PRODUCT </h1><hr>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .button-71 {
+        background-color: #0078d0;
+        border: 0;
+        border-radius: 56px;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        outline: 0;
+        padding: 16px 21px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: all .3s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        }
+
+        .button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+    </style>
+    </head>
+    <body>
+        <form method="post" action="{% url 'add_product' %}">
+            {% csrf_token %}
+
+            <lable>id</lable>
+            <input type="number" name="id" value="{{products.id}}" readonly><br><br>
+
+            <lable>name</lable>
+            <input type="text" name="name" value = "{{products.name}}" required><br><br>
+
+            <lable>price</lable>
+            <input type="number" name="price" value = "{{products.price}}" required><br><br>
+
+            <lable>packaging_date</lable>
+            <input type="date" name="packaging_date" value = "{{products.packaging_date | date:'Y-m-d'}}" required><br><br>
+            {% if products.id %}
+            <button class="button-33" role="button">Update Product</button>
+            {% else %}
+            <button class="button-33" role="button">Add Product</button>
+            {% endif %}
+
+            <a class="button-33" role="button" href="{% url 'all_products' %}">Back</a>
+        </form>
+    </body>
+</html>
+
