@@ -34,6 +34,3 @@ urlpatterns = [
 ]
 
 
-print("Vinay jojare")
-
-print("Software engineer")
